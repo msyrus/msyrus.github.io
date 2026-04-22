@@ -275,13 +275,16 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 5vw, 48px)
 }
 
 .typewriter {
+  display: block;                     /* own line, full width of h1 */
   font-family: var(--font-mono);
   font-size: 0.78em;
   color: var(--accent);
-  display: inline-flex; align-items: center; flex-wrap: wrap;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  max-width: 100%;
+  /* Reserve enough vertical space that swapping between short and long
+     phrases (and typing them char-by-char) never shifts anything below.
+     1.4em covers one line of mono text with buffer on desktop. */
+  min-height: 1.4em;
 }
 .tw-caret {
   display: inline-block; color: var(--accent);
@@ -753,12 +756,13 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 5vw, 48px)
 @media (max-width: 640px) {
   .typewriter {
     font-size: 0.62em;
+    min-height: 1.5em;
   }
 }
 
 @media (max-width: 420px) {
   .hero-title { font-size: clamp(1.9rem, 9vw, 4.6rem); }
-  .typewriter { font-size: 0.58em; }
+  .typewriter { font-size: 0.58em; min-height: 1.5em; }
   .section { padding: 70px 0; }
   .btn { padding: 12px 18px; font-size: 14px; }
   .eyebrow { font-size: 12px; }

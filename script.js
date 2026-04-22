@@ -94,11 +94,11 @@
 
   // ------------------ Typewriter (hero) ------------------
   const heroTypes = [
-    "reliable backend systems",
+    "reliable backends",
     "developer tooling",
-    "boring, dependable software",
+    "dependable software",
     "things in Go",
-    "stuff that doesn't page at 3am",
+    "quiet 3am systems",
   ];
   const twTarget = $(".tw-target");
   if (twTarget) runTypewriter(twTarget, heroTypes, { type: 55, erase: 28, hold: 1800 });
